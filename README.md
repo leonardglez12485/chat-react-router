@@ -1,28 +1,67 @@
-# React + TypeScript + Vite
+# Biblioteca de Chat de Soporte
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una biblioteca de chat de soporte construida con React, TypeScript y Vite. Proporciona una interfaz moderna y personalizable para integrar un sistema de chat de soporte en cualquier aplicación web.
 
-Currently, two official plugins are available:
+## 🚀 Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 💬 Interfaz de chat moderna y responsive
+- 🎨 Personalizable con temas y estilos
+- 🔒 Tipado fuerte con TypeScript
+- ⚡ Desarrollo rápido con Vite
+- 📱 Soporte para dispositivos móviles
+- 🔄 Actualización en tiempo real de mensajes
 
-## Expanding the ESLint configuration
+## 📋 Requisitos Previos
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Node.js (versión 16 o superior)
+- npm o yarn
+
+## 🛠️ Instalación
+
+1. Clona el repositorio:
+```bash
+git clone [url-del-repositorio]
+```
+
+2. Instala las dependencias:
+```bash
+npm install
+# o
+yarn install
+```
+
+3. Inicia el servidor de desarrollo:
+```bash
+npm run dev
+# o
+yarn dev
+```
+
+## 🏗️ Estructura del Proyecto
+
+```
+src/
+├── components/     # Componentes reutilizables
+├── hooks/         # Hooks personalizados
+├── styles/        # Estilos y temas
+├── types/         # Definiciones de tipos
+└── utils/         # Utilidades y helpers
+```
+
+## 🔧 Configuración
+
+### ESLint
+
+Para una mejor experiencia de desarrollo, recomendamos configurar ESLint con reglas específicas para TypeScript:
 
 ```js
 export default tseslint.config({
   extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
     ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
     ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
     ...tseslint.configs.stylisticTypeChecked,
   ],
   languageOptions: {
-    // other options...
     parserOptions: {
       project: ['./tsconfig.node.json', './tsconfig.app.json'],
       tsconfigRootDir: import.meta.dirname,
@@ -31,24 +70,38 @@ export default tseslint.config({
 })
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📦 Integración
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Para integrar el chat en tu aplicación:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```tsx
+import { ChatWidget } from 'suport-chat-library';
+
+function App() {
+  return (
+    <ChatWidget
+      apiKey="tu-api-key"
+      theme="light"
+      position="bottom-right"
+    />
+  );
+}
 ```
+
+## 🤝 Contribución
+
+Las contribuciones son bienvenidas. Por favor, sigue estos pasos:
+
+1. Haz un fork del proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Haz commit de tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
+
+## 📞 Soporte
+
+Para soporte, por favor abre un issue en el repositorio o contacta al equipo de desarrollo.
